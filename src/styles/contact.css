@@ -1,0 +1,473 @@
+/* Contact Page Aceternity-inspired Effects */
+
+/* Hero Text Animation */
+.contact-hero-text {
+  background: linear-gradient(135deg, #00C9A7, #845EC2, #FF6B6B, #F9F871);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: contactGradientFlow 12s ease-in-out infinite;
+}
+
+@keyframes contactGradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Contact Page Background */
+.contact-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 201, 167, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(132, 94, 194, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 107, 107, 0.01) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Contact Info Cards */
+.contact-info-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.contact-info-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(0, 201, 167, 0.03) 30%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.contact-info-card:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Contact Form Container */
+.contact-form-container {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+}
+
+.contact-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 201, 167, 0.02) 0%,
+    rgba(132, 94, 194, 0.02) 50%,
+    rgba(255, 107, 107, 0.02) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.contact-form-container:hover::before {
+  opacity: 1;
+}
+
+/* Form Animation Effects */
+.contact-form-container input:focus,
+.contact-form-container textarea:focus,
+.contact-form-container select:focus {
+  box-shadow: 
+    0 0 0 3px rgba(0, 201, 167, 0.1),
+    0 8px 25px rgba(0, 201, 167, 0.08);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Submit Button Animation */
+.contact-submit-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00C9A7, #00B395) !important;
+}
+
+.contact-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-submit-btn:hover::before {
+  left: 100%;
+}
+
+.contact-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* Store Locations Container */
+.store-locations-container {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.store-locations-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.store-locations-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.store-locations-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 201, 167, 0.3);
+  border-radius: 3px;
+}
+
+.store-locations-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 201, 167, 0.5);
+}
+
+/* Store Location Items */
+.store-location-item {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.store-location-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #00C9A7, #845EC2);
+  border-radius: 16px 0 0 16px;
+  transition: width 0.3s ease;
+}
+
+.store-location-item:hover::before {
+  width: 4px;
+}
+
+/* Social Media Links */
+.social-media-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-media-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.social-media-link:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+/* Floating Elements Animation */
+@keyframes contactFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+/* Contact Cards Stagger Animation */
+.contact-info-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.contact-info-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.contact-info-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.contact-info-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-hero-text {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  .contact-form-container,
+  .store-locations-container {
+    padding: 6px !important;
+    border-radius: 20px !important;
+  }
+
+  .contact-info-card {
+    padding: 6px !important;
+    border-radius: 16px !important;
+  }
+
+  .store-locations-container {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-text {
+    font-size: 1.5rem !important;
+  }
+
+  .contact-submit-btn {
+    height: 50px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .contact-info-card,
+  .contact-form-container,
+  .store-locations-container {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .store-location-item {
+    background: rgba(40, 40, 40, 0.5) !important;
+  }
+  
+  .store-location-item:hover {
+    background: rgba(0, 201, 167, 0.1) !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .contact-info-card,
+  .contact-form-container,
+  .store-locations-container {
+    border: 2px solid rgba(0, 201, 167, 0.6);
+    background: rgba(255, 255, 255, 1);
+  }
+  
+  .contact-submit-btn {
+    border: 2px solid #00C9A7;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .contact-hero-text,
+  .contact-info-card,
+  .social-media-link {
+    animation: none;
+  }
+  
+  .contact-info-card:hover,
+  .contact-submit-btn:hover,
+  .social-media-link:hover {
+    transform: none;
+  }
+  
+  .contactGradientFlow {
+    animation: none;
+  }
+}
+
+/* Focus states for accessibility */
+.contact-submit-btn:focus-visible {
+  outline: 3px solid rgba(0, 201, 167, 0.5);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(0, 201, 167, 0.5);
+  outline-offset: 2px;
+}
+
+/* Performance optimizations */
+.contact-info-card,
+.contact-form-container,
+.store-location-item,
+.social-media-link {
+  will-change: transform, opacity;
+}
+
+/* Enhanced form validation styles */
+.chakra-form__error-message {
+  font-size: 0.875rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.chakra-input[aria-invalid="true"],
+.chakra-textarea[aria-invalid="true"] {
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Success message animation */
+.chakra-alert {
+  animation: slideInDown 0.5s ease-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced hover effects for contact cards */
+.contact-info-card:hover {
+  animation: contactCardPulse 0.6s ease-in-out;
+}
+
+@keyframes contactCardPulse {
+  0%, 100% { transform: translateY(-8px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+}
+
+/* Loading spinner enhancement */
+.contact-submit-btn .chakra-spinner {
+  border-color: rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+}
+
+/* Enhanced focus states */
+.chakra-input:focus,
+.chakra-textarea:focus,
+.chakra-select:focus {
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* WhatsApp button special styling */
+.social-media-link[href*="wa.me"] {
+  position: relative;
+  overflow: visible;
+}
+
+.social-media-link[href*="wa.me"]::before {
+  content: 'Chat with us';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.social-media-link[href*="wa.me"]:hover::before {
+  opacity: 1;
+  bottom: -35px;
+}
+
+/* Store location badge improvements */
+.store-location-item .chakra-badge {
+  animation: badgeFloat 2s ease-in-out infinite;
+  animation-delay: var(--badge-delay, 0s);
+}
+
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .chakra-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .social-media-link {
+    padding: 3px !important;
+    font-size: 1.25rem !important;
+  }
+  
+  .contact-hero-text {
+    text-align: center !important;
+  }
+}

@@ -1,0 +1,589 @@
+/* Franchise Page Aceternity-inspired Effects */
+
+/* Hero Text Animation */
+.franchise-hero-text {
+  background: linear-gradient(135deg, #00C9A7, #845EC2, #FF6B6B, #F9F871);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: franchiseGradientFlow 10s ease-in-out infinite;
+}
+
+@keyframes franchiseGradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Franchise Stat Cards */
+.franchise-stat-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.franchise-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 201, 167, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.franchise-stat-card:hover::before {
+  left: 100%;
+}
+
+.franchise-stat-card:hover {
+  transform: translateY(-5px) rotateX(5deg);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Stat Icon Animation */
+.stat-icon {
+  animation: statIconFloat 4s ease-in-out infinite;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+@keyframes statIconFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+/* Franchise Model Cards */
+.franchise-model-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border-radius: 24px !important;
+}
+
+.franchise-model-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(0, 201, 167, 0.05) 30%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.franchise-model-card:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.franchise-model-card:hover {
+  transform: translateY(-15px) rotateX(3deg) rotateY(2deg);
+  border: 1px solid rgba(0, 201, 167, 0.3);
+  box-shadow: 
+    0 35px 70px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 30px rgba(0, 201, 167, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Popular Badge Animation */
+.popular-badge {
+  animation: popularPulse 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FF6B6B, #F9F871) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  color: #1E1E1E !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(255, 107, 107, 0.3),
+    0 4px 16px rgba(249, 248, 113, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.popular-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  animation: badgeShimmer 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes popularPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 8px 32px rgba(255, 107, 107, 0.3),
+      0 4px 16px rgba(249, 248, 113, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      0 0 0 0 rgba(255, 107, 107, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 
+      0 12px 48px rgba(255, 107, 107, 0.4),
+      0 6px 24px rgba(249, 248, 113, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 0.5),
+      0 0 30px 8px rgba(255, 107, 107, 0.3);
+  }
+}
+
+@keyframes badgeShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* General Badge Enhancements */
+.chakra-badge {
+  position: relative;
+  overflow: hidden;
+}
+
+.chakra-badge[data-theme="primary"] {
+  background: linear-gradient(135deg, #00C9A7, #00A887) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 4px 16px rgba(0, 201, 167, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure text visibility in popular badge */
+.popular-badge * {
+  position: relative;
+  z-index: 2;
+  color: #1E1E1E !important;
+  font-weight: 700 !important;
+}
+
+/* Benefit Cards */
+.benefit-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border-radius: 20px !important;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.benefit-card:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px) rotateX(5deg) scale(1.02);
+  border: 1px solid rgba(0, 201, 167, 0.3);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 25px rgba(0, 201, 167, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Process Timeline Effects */
+.process-timeline-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.process-timeline-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00C9A7, #845EC2, #FF6B6B);
+  animation: timelineProgress 3s ease-out forwards;
+}
+
+@keyframes timelineProgress {
+  to {
+    width: 100%;
+  }
+}
+
+/* Process Step Animation */
+.process-step {
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.process-step-icon {
+  animation: stepIconBounce 2s ease-in-out infinite;
+}
+
+@keyframes stepIconBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Form Card Effects */
+.franchise-form-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.franchise-form-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 34px;
+  background: linear-gradient(45deg, #00C9A7, #845EC2, #FF6B6B, #F9F871);
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: formBorderGlow 8s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+@keyframes formBorderGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Submit Button Effects */
+.franchise-submit-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.franchise-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+.franchise-submit-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.franchise-submit-btn:active::before {
+  width: 400px;
+  height: 400px;
+  transition: all 0.2s ease;
+}
+
+/* Floating Particles Enhancement */
+.franchise-particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.franchise-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 201, 167, 0.3);
+  border-radius: 50%;
+  animation: franchiseParticleFloat 12s linear infinite;
+}
+
+.franchise-particle:nth-child(2n) {
+  background: rgba(132, 94, 194, 0.3);
+  animation-delay: -3s;
+  animation-duration: 15s;
+}
+
+.franchise-particle:nth-child(3n) {
+  background: rgba(255, 107, 107, 0.3);
+  animation-delay: -6s;
+  animation-duration: 18s;
+}
+
+.franchise-particle:nth-child(4n) {
+  background: rgba(249, 248, 113, 0.3);
+  animation-delay: -9s;
+  animation-duration: 14s;
+}
+
+@keyframes franchiseParticleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0px) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) translateX(20px) scale(1) rotate(45deg);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(-10vh) translateX(-20px) scale(1) rotate(315deg);
+  }
+  100% {
+    transform: translateY(-20vh) translateX(0px) scale(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive Optimizations */
+@media (max-width: 768px) {
+  .franchise-hero-text {
+    font-size: 2.5rem !important;
+    line-height: 1.2;
+    background-size: 300% 300%;
+  }
+  
+  .franchise-model-card:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  
+  .benefit-card:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+  
+  .process-step-icon {
+    animation: none;
+  }
+  
+  .franchise-particle {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .franchise-hero-text {
+    font-size: 2rem !important;
+  }
+  
+  .franchise-stat-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .franchise-form-card::before {
+    display: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .franchise-stat-card,
+  .franchise-model-card,
+  .benefit-card {
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+  }
+  
+  .franchise-stat-card:hover,
+  .franchise-model-card:hover,
+  .benefit-card:hover {
+    border: 1px solid rgba(0, 201, 167, 0.4);
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.15),
+      0 0 30px rgba(0, 201, 167, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .franchise-form-card {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Performance optimizations */
+.franchise-stat-card,
+.franchise-model-card,
+.benefit-card,
+.process-step,
+.franchise-submit-btn {
+  will-change: transform, opacity;
+}
+
+/* High refresh rate displays */
+@media (min-resolution: 120dpi) {
+  .franchise-stat-card,
+  .franchise-model-card,
+  .benefit-card {
+    transition-duration: 0.2s;
+  }
+  
+  .franchise-hero-text {
+    animation-duration: 8s;
+  }
+  
+  .statIconFloat,
+  .stepIconBounce {
+    animation-duration: 3s;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .franchise-hero-text,
+  .stat-icon,
+  .process-step-icon,
+  .franchise-particle,
+  .popular-badge {
+    animation: none;
+  }
+  
+  .franchise-stat-card:hover,
+  .franchise-model-card:hover,
+  .benefit-card:hover,
+  .process-step:hover {
+    transform: none;
+  }
+  
+  .franchise-form-card::before {
+    animation: none;
+  }
+}
+
+/* Focus states for accessibility */
+.franchise-submit-btn:focus-visible {
+  outline: 3px solid rgba(0, 201, 167, 0.5);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(0, 201, 167, 0.5);
+  outline-offset: 2px;
+}
+
+/* Mobile-specific border improvements */
+@media (max-width: 768px) {
+  .franchise-model-card,
+  .benefit-card {
+    border: 1px solid rgba(0, 201, 167, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+  }
+  
+  .franchise-model-card:hover,
+  .benefit-card:hover {
+    border: 1px solid rgba(0, 201, 167, 0.5);
+    transform: translateY(-8px);
+  }
+  
+  .popular-badge {
+    font-size: 0.8rem !important;
+    padding: 6px 12px !important;
+    border: 3px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 
+      0 12px 40px rgba(255, 107, 107, 0.4),
+      0 6px 20px rgba(249, 248, 113, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .franchise-model-card,
+  .benefit-card {
+    border: 2px solid rgba(0, 201, 167, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .franchise-model-card:hover,
+  .benefit-card:hover {
+    border: 2px solid #00C9A7;
+    background: rgba(0, 201, 167, 0.1);
+  }
+}

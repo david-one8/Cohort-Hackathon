@@ -1,0 +1,109 @@
+/* Fix for button and link interaction issues */
+
+/* Ensure all buttons and links are clickable */
+button, 
+a, 
+.chakra-button,
+.chakra-link,
+[role="button"] {
+  position: relative !important;
+  z-index: 10 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Fix for any potential overlay issues */
+.chakra-button:disabled {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+}
+
+/* Ensure form elements are interactive */
+input, 
+textarea, 
+select,
+.chakra-input,
+.chakra-textarea,
+.chakra-select {
+  position: relative !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}
+
+/* Fix for React Router Links */
+a[href] {
+  position: relative !important;
+  z-index: 10 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  text-decoration: none;
+}
+
+/* Fix for navigation links */
+.navbar-nav-link,
+.navbar-mobile-link {
+  position: relative !important;
+  z-index: 15 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Ensure mobile menu is interactive */
+.chakra-drawer__content {
+  z-index: 1000 !important;
+}
+
+.chakra-drawer__content button,
+.chakra-drawer__content a {
+  z-index: 1001 !important;
+}
+
+/* Fix for any modal or drawer overlays */
+.chakra-modal__content,
+.chakra-drawer__content {
+  position: relative !important;
+}
+
+.chakra-modal__content button,
+.chakra-modal__content a,
+.chakra-drawer__content button,
+.chakra-drawer__content a {
+  z-index: inherit !important;
+}
+
+/* Override any potential smooth scroll interference */
+* {
+  -webkit-touch-callout: initial;
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}
+
+/* Ensure click events are not prevented */
+.lenis,
+.lenis-smooth {
+  pointer-events: auto !important;
+}
+
+/* Fix for any backdrop interference */
+.chakra-modal__overlay,
+.chakra-drawer__overlay {
+  pointer-events: auto !important;
+}
+
+/* Ensure social media links work */
+.social-media-link {
+  position: relative !important;
+  z-index: 10 !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+/* Fix for process step icons */
+.process-step-icon {
+  position: relative !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+}

@@ -1,0 +1,111 @@
+.magic-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size, 80px);
+  height: var(--size, 80px);
+}
+
+.magic-loader-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.magic-loader-dot {
+  position: absolute;
+  width: 12%;
+  height: 12%;
+  background: var(--color, #3b82f6);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% -300%;
+  animation: magic-rotate 2s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.magic-loader-dot:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.magic-loader-dot:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.magic-loader-dot:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.magic-loader-dot:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.magic-loader-dot:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.magic-loader-dot:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.magic-loader-dot:nth-child(7) {
+  transform: translate(-50%, -50%) rotate(270deg);
+}
+
+.magic-loader-dot:nth-child(8) {
+  transform: translate(-50%, -50%) rotate(315deg);
+}
+
+@keyframes magic-rotate {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(var(--rotation, 0deg));
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5) rotate(calc(var(--rotation, 0deg) + 180deg));
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(calc(var(--rotation, 0deg) + 360deg));
+    opacity: 1;
+  }
+}
+
+.magic-loader-dot:nth-child(1) { --rotation: 0deg; }
+.magic-loader-dot:nth-child(2) { --rotation: 45deg; }
+.magic-loader-dot:nth-child(3) { --rotation: 90deg; }
+.magic-loader-dot:nth-child(4) { --rotation: 135deg; }
+.magic-loader-dot:nth-child(5) { --rotation: 180deg; }
+.magic-loader-dot:nth-child(6) { --rotation: 225deg; }
+.magic-loader-dot:nth-child(7) { --rotation: 270deg; }
+.magic-loader-dot:nth-child(8) { --rotation: 315deg; }
+
+/* Loading screen overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease-out;
+}
+
+.loading-overlay.fade-out {
+  opacity: 0;
+}
+
+.loading-text {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #374151;
+  letter-spacing: 0.025em;
+}
